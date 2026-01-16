@@ -1,3 +1,4 @@
+
 #!/usr/bin/env node
 'use strict';
 
@@ -91,7 +92,7 @@ async function updateGist(stats) {
     return request('PATCH /gists/:gist_id', {
         files: {
             [filename]: {
-                filename: `${stats.name}'s GitHub Stats`,
+                filename: 'Recent Activity 💻',
                 content: gistContent,
             },
         },
@@ -101,6 +102,7 @@ async function updateGist(stats) {
         console.info(`Updated Gist ${gistId} with the following content:\n${gistContent}`);
     });
 }
+
 
 main().catch((err) => {
     console.error(err.message);
